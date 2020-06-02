@@ -27,19 +27,19 @@ class DishDetail extends Component{
     }
   
     render(){
-        if(this.props.selectedDish != null){
+        if(this.props.dish != null){
             return(
                 <div className="row">
                   <div  className="col-12 col-md-5 m-1">
                     <Card>
-                        <CardImg width="100%" src={this.props.selectedDish.image} alt={this.props.selectedDish.name} />
+                        <CardImg width="100%" src={this.props.dish.image} alt={this.props.dish.name} />
                         <CardBody>
-                            <CardTitle><b>{this.props.selectedDish.name}</b></CardTitle>
-                            <CardText>{this.props.selectedDish.description}</CardText>
+                            <CardTitle><b>{this.props.dish.name}</b></CardTitle>
+                            <CardText>{this.props.dish.description}</CardText>
                         </CardBody>
                     </Card>
                   </div>
-                  {this.renderComments(this.props.selectedDish.comments)}
+                  {this.renderComments(this.props.dish.comments)}
                 </div>
             )
         }
