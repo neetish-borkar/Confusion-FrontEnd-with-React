@@ -27,13 +27,15 @@ function RenderComments({comments}){
 
 const RenderDish = ({dish}) => {
     return (
-        <Card>
-            <CardImg width="100%" src={dish.image} alt={dish.name} />
-            <CardBody>
-                <CardTitle><b>{dish.name}</b></CardTitle>
-                <CardText>{dish.description}</CardText>
-            </CardBody>
-        </Card>
+        <div className="col-12 col-md-5 m-1">
+            <Card>
+                <CardImg width="100%" src={dish.image} alt={dish.name} />
+                <CardBody>
+                    <CardTitle><b>{dish.name}</b></CardTitle>
+                    <CardText>{dish.description}</CardText>
+                </CardBody>
+            </Card>
+        </div>
     );
 }
 
@@ -41,9 +43,7 @@ const DishDetail = (props) => {
     if(props.dish != null){
         return(
             <div className="row">
-                <div  className="col-12 col-md-5 m-1">
-                    <RenderDish dish = {props.dish} />
-                </div>
+                <RenderDish dish = {props.dish} />
                 <RenderComments comments = {props.dish.comments}/>
             </div>
         )
